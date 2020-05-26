@@ -1,0 +1,226 @@
+---
+layout: default
+# The posts' layout
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT Licensed
+---
+
+<div class="row">
+
+  <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+
+    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      <h1 data-toc-skip {% if page.lang == 'fa' %}style="direction: rtl; text-align: right;"{% endif %}>{{ page.title }}</h1>
+
+      <div class="post-meta text-muted d-flex flex-column" {% if page.lang == 'fa' %}style="justify-content: flex-start; flex-direction: row-reverse !important;"{% endif %}>
+        <!-- Published date and author -->
+	{% if page.lang != 'fa' %}
+        <div>
+          Posted
+          <span class="timeago" data-toggle="tooltip" data-placement="bottom"
+           title="{{ page.date | date: site.data.date_format.tooltip }}">
+            {{ page.date | date: site.data.date_format.post }}
+            <i class="unloaded">{{ page.date | date_to_xmlschema }}</i>
+          </span>
+          by
+          <a href="/tabs/about" class="author">
+          {% if page.author %}
+            {{ page.author }}
+          {% else%}
+            {{ site.author }}
+          {% endif %}
+          </a>
+        </div>
+	{% else %}
+        <div style="direction: rtl; text-align: right;">
+          نوشته شده در
+          <span class="timeago farsi" data-toggle="tooltip" data-placement="bottom"
+           title="{{ page.date | date: site.data.date_format.tooltip }}">
+            {{ page.date | date: site.data.date_format.post }}
+            <i class="unloaded">{{ page.date | date_to_xmlschema }}</i>
+          </span>،
+          توسط
+          <a href="/tabs/about" class="author">
+          {% if page.author %}
+            {{ page.author }}
+          {% else%}
+            {{ site.author }}
+          {% endif %}
+          </a>
+        </div>
+	{% endif %}
+
+        <!-- lastmod -->
+        {%- capture filename -%}
+          {{ page.url | split: "/" | last }}
+        {%- endcapture -%}
+
+        {% assign record = site.data.updates | where: "filename", filename | first %}
+
+        {% if record %}
+	{% if page.lang != 'fa' %}
+        <div>
+          Updated
+          <span class="timeago lastmod"
+            data-toggle="tooltip" data-placement="bottom"
+             title="{{ record.lastmod | date: site.data.date_format.tooltip }}">
+            {{ record.lastmod | date: site.data.date_format.post }}
+            <i class="unloaded">{{ record.lastmod | date_to_xmlschema}}</i>
+          </span>
+        </div>
+        {% else %}
+        <div class="farsi" style="direction: rtl; text-align: right;">
+          به‌روز شده در
+          <span class="timeago lastmod farsi"
+            data-toggle="tooltip" data-placement="bottom"
+             title="{{ record.lastmod | date: site.data.date_format.tooltip }}">
+            {{ record.lastmod | date: site.data.date_format.post }}
+            <i class="unloaded">{{ record.lastmod | date_to_xmlschema}}</i>
+          </span>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        <!-- page views -->
+        {% if site.google_analytics.pv.enabled %}
+        <div>
+          <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
+          views
+        </div>
+        {% endif %}
+
+      </div> <!-- .post-meta -->
+
+      <div class="post-content{% if page.lang == 'fa' %} farsi{% endif %}">
+
+        {% if page.image %}
+          <img src="{{ page.image }}">
+        {% endif %}
+
+        {{ content }}
+	
+	<!--
+	<div id="hyvor-talk-view"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 698;
+            var HYVOR_TALK_CONFIG = {
+                url: '{{ page.url | absolute_url }}',
+                id: '{{page.id}}'
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+	-->
+
+	<!-- Comments -->
+{% if site.data.comments[page.slug] %}
+    <h3>
+    {% if site.data.comments[page.slug].size > 1 %}
+      {{ site.data.comments[page.slug] | size }}
+    {% endif %}
+    Comments:
+    </h3>
+  {% assign comments = site.data.comments[page.slug] | sort %}
+    {% for comment in comments %}
+      <label>
+        {% if comment[1].url %}
+          <a href="{{ comment[1].url }}">
+        {% endif %}
+        <strong>{{ comment[1].name }}</strong>
+        {% if comment[1].url %}
+          </a>
+        {% endif %}
+      </label>
+      <em>{{ comment[1].date | date: "%B %d, %Y" }}</em>
+      <p>{{ comment[1].message | markdownify }}</p>
+    {% endfor %}
+{% endif %}
+<!-- Comments Form -->
+  <form method="POST" action="{{ site.staticman_url }}">
+    <input name="options[redirect]" type="hidden" value="https://example.com">
+    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+      <label>Name</label>
+      <input name="fields[name]" type="text">
+      <label>E-mail (optional)</label>
+      <input name="fields[email]" type="email">
+      <label>Website (optional)</label>
+      <input name="fields[url]" type="url">
+      <label>Message</label>
+      <textarea style="width:100%" name="fields[message]" rows="12"></textarea>
+      <small>Comments will appear after moderation.</small>
+      <button type="submit">Submit</button>
+  </form>
+      </div>
+
+      <div class="post-tail-wrapper text-muted">
+
+        <!-- categories -->
+        {% if page.categories.size > 0 %}
+        <div class="post-meta mb-3">
+          <i class="far fa-folder-open fa-fw mr-1"></i>
+          {% for category in page.categories %}
+            <a href='{{ site.baseurl }}/categories/{{ category | replace: ' ', '-' | downcase | url_encode }}/'>{{ category }}</a>
+            {%- unless forloop.last -%}, {%- endunless -%}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw mr-1"></i>
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags/{{ tag | replace: ' ', '-' | downcase | url_encode }}/"
+            class="post-tag no-text-decoration" >
+            {{- tag -}}
+          </a>
+          {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="post-tail-bottom
+          d-flex justify-content-between align-items-center pt-5 pb-2">
+          {% if site.data.rights.license %}
+          <div class="license-wrapper">
+            This post is licensed under
+            <a href="{{ site.data.rights.license.link }}">{{ site.data.rights.license.name }}</a>
+            by the author.
+          </div>
+          {% endif %}
+
+          {% include post-sharing.html %}
+
+        </div><!-- .post-tail-bottom -->
+
+      </div><!-- div.post-tail -->
+
+    </div> <!-- .post -->
+
+  </div> <!-- #post-wrapper -->
+
+  {% include panel.html %}
+
+</div> <!-- .row -->
+
+<div class="row">
+  <div id="post-extend-wrapper" class="col-12 col-lg-11 col-xl-8">
+
+    <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+
+      {% include post-nav.html %}
+
+      {% if site.disqus.comments and page.comments %}
+        {% include disqus.html %}
+      {% endif %}
+
+      {% include related-posts.html %}
+
+    </div> <!-- .pl-1 pr-1 -->
+
+  </div> <!-- #post-extend-wrapper -->
+
+</div> <!-- .row -->
+
+{% include lozad.html %}
