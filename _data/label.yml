@@ -6,14 +6,14 @@
 
 
 panel:
-  lastmod: "Recent Update"
-  trending_tags: "Trending Tags"
-  toc: "Contents"
+  lastmod: "جدیدترین‌ها"
+  trending_tags: "برچسب‌های فعال"
+  toc: "فهرست"
 
 post:
-  relate_posts: "Further Reading"
+  relate_posts: "مطالب مرتبط"
   button:
-    next: Newer
-    previous: Older
+    next: بعدی
+    previous: قبلی
 
-search_hint: "Search"   # text show on search bar
+search_hint: "جستجو"   # text show on search bar

@@ -88,10 +88,12 @@ $sidebar-display: "sidebar-display";
     }
   }
   .nav-link {
+    direction: rtl !important;
+    text-align: right !important;
     border-radius: 0;
     font-size: .95rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
   }
   .nav-item {
     height: $tab-height;
@@ -113,8 +115,10 @@ $sidebar-display: "sidebar-display";
 
     >li:last-child {
       >a {
-        margin-right: -3px;
-        max-width: calc(100% - 3px);
+        /* margin-right: -1px;
+        max-width: calc(100% - 1px); */
+	margin-right: 0.005rem;
+	max-width: calc(100% - 0.005rem);
       }
       &::after { // the cursor
         visibility: hidden;
@@ -248,7 +252,7 @@ $sidebar-display: "sidebar-display";
     font-size: 1.5rem;
     letter-spacing: -.2px;
     &:hover {
-      color: #fff;
+      color: #fff !important;
       text-decoration: none;
     }
   }
@@ -1362,14 +1366,14 @@ table {
   #profile-wrapper {
     margin-top: 4rem;
     margin-bottom: 3rem;
-    padding-left: 18%;
+    padding-right: 18%;
     -ms-flex-direction: column!important;
   }
 
   #avatar {
     -webkit-box-pack: normal !important;
     -ms-flex-pack: normal !important;
-    justify-content: normal !important;
+    justify-content: flex-end !important;
     >a {
       width: 6.2rem;
       height: 6.2rem;
@@ -1392,17 +1396,18 @@ table {
 
   #site-title a {
     font-size: 1.7rem;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
+    margin-right: 0;
   }
 
   .profile-text>div {
-    text-align: left !important;
+    text-align: right !important;
     width: 100%;
   }
 
   #site-subtitle {
     word-spacing: 0;
-    padding-right: 3rem;
+    padding-left: 3rem;
     margin: .3rem 0 0 0;
   }
 
@@ -1411,7 +1416,7 @@ table {
     ul {
       margin-left: 5%;
       >li>a {
-        padding-left: 2.5rem;
+        padding-right: 2.5rem;
         -webkit-box-pack: start!important;
         -ms-flex-pack: start!important;
         justify-content: flex-start!important;
@@ -1420,7 +1425,7 @@ table {
 
     .nav-link {
       >span {
-        letter-spacing: 3px;
+        /* letter-spacing: 3px; */
       }
       >i {
         @include icon-round(1.65rem);
@@ -1600,4 +1605,45 @@ ol.persian {
 	}
 
 	.no-border-radius { &, * { border-radius: 0 !important; } }
+}
+
+#site-title a {
+	color: #9391a5 !important;
+}
+
+#site-subtitle {
+	direction: rtl !important;
+}
+
+.tooltip.tooltip.tooltip * {
+	font-family: "Source Sans Pro", Vazir, sans-serif;
+	direction: rtl !important;
+	text-align: right !important;
+}
+
+#panel-wrapper * {
+	font-family: 'Lato', 'Vazir', 'Microsoft Yahei', sans-serif;
+}
+
+#related-posts {
+	font-family: 'Lato', 'Vazir', 'Microsoft Yahei', sans-serif !important;
+	direction: rtl;
+	text-align: right;
+
+	h3 {
+		font-family: 'Lato', 'Vazir', 'Microsoft Yahei', sans-serif !important;
+	}
+}
+
+
+
+
+
+
+
+/* RTL Codes */
+#sidebar {
+	right: 0;
+	direction: rtl;
+	* { direction: initial }
 }
