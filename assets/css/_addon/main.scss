@@ -1843,3 +1843,23 @@ nav[data-toggle="toc"] .nav > li > a { border-left: none !important; padding-lef
 		}
 	}
 }
+
+.share-wrapper {
+	.share-label {
+		margin-left: .25rem !important;
+		margin-right: 0 !important;
+		font-family: 'Lato', 'Vazir', 'Microsoft Yahei', sans-serif !important;
+	}
+
+	.share-icons a {
+		&:not(:last-child) {
+			margin-left: .25rem;
+		}
+		margin-right: 0 !important;
+	}
+}
+
+#post-wrapper .post .post-meta {
+	justify-content: flex-start;
+	flex-direction: row-reverse !important;
+}

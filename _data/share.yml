@@ -10,15 +10,15 @@ label: "اشتراک‌گذاری"
 
 platforms:
   -
-    type: Twitter
+    type: توییتر
     icon: "fab fa-twitter"
     link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
   -
-    type: Facebook
+    type: فیسبوک
     icon: "fab fa-facebook-square"
     link: "https://www.facebook.com/sharer/sharer.php?title=TITLE&u=URL"
   -
-    type: Telegram
+    type: تلگرام
     icon: "fab fa-telegram"
     link: "https://telegram.me/share?text=TITLE&url=URL"
 
