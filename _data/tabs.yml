@@ -6,25 +6,30 @@
 
 
 -
-  name: وبلاگ من
+  name: Home
+  label: وبلاگ من
   icon: "fas fa-home"
 -
-  name: موضوعات
+  name: Categories
+  label: موضوعات
   icon: "fas fa-stream"
   path: tabs
   url: categories
 -
-  name: "برچسب‌ها"
+  name: Tags
+  label: "برچسب‌ها"
   icon: "fas fa-tags"
   path: tabs
   url: tags
 -
-  name: "آرشیو"
+  name: Archives
+  label: "آرشیو"
   path: tabs
   url: archives
   icon: "fas fa-archive"
 -
-  name: "دربارهٔ من"
+  name: About
+  label: "دربارهٔ من"
   icon: "fas fa-info"
   path: tabs
   url: about

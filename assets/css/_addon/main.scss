@@ -72,7 +72,7 @@ $sidebar-display: "sidebar-display";
   @include pl-pr(0);
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   overflow-y: auto;
   width: $sidebar-width-medium;
@@ -117,14 +117,15 @@ $sidebar-display: "sidebar-display";
       >a {
         /* margin-right: -1px;
         max-width: calc(100% - 1px); */
-	margin-right: 0.005rem;
+        /* CT */
+	margin-left: 0.005rem;
 	max-width: calc(100% - 0.005rem);
       }
       &::after { // the cursor
         visibility: hidden;
         content: "";
         position: relative;
-        right: 1px;
+        left: 1px; /* CT */
         width: 3px;
         height: $tab-cursor-height;
         background-color: var(--nav-cursor-color);
@@ -285,8 +286,10 @@ $sidebar-display: "sidebar-display";
   height: $topbar-height;
   position: fixed;
   top: 0;
-  left: 260px; /* same as sidebar width */
-  right: 0;
+
+  /* CT */
+  right: 260px; /* same as sidebar width */
+  left: 0;
   transition: top 0.2s ease-in-out;
   z-index: 50;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
@@ -299,9 +302,10 @@ $sidebar-display: "sidebar-display";
 }
 
 #breadcrumb {
+  /* CT */
   font-size: 1rem;
   color: gray;
-  padding-left: .5rem;
+  padding-right: .5rem;
   a:hover {
     @extend %link-hover;
   }
@@ -377,6 +381,7 @@ $sidebar-display: "sidebar-display";
     &::before {
       content: "#";
       color: var(--text-muted-color);
+      
       padding-right: .2rem;
     }
   }
@@ -805,7 +810,8 @@ table {
     @extend %link-color;
     @extend %link-underline;
     &:not(:last-child) {
-      margin-right: 2px;
+      /* CT */
+      margin-left: 2px;
     }
     &:hover {
       @extend %link-hover;
@@ -851,7 +857,8 @@ table {
   color: inherit;
   line-height: 1.3rem;
   &:not(:last-child) {
-    margin-right: .2rem;
+    /* CT */
+    margin-left: .2rem;
   }
 
   &:hover {
@@ -1012,6 +1019,8 @@ table {
 
     #topbar-wrapper,
     #main-wrapper {
+      /* CT */
+      /* Removed "-" SHARP_SIGN */
       transform: translateX(#{$sidebar-width-medium});
     }
 
@@ -1020,8 +1029,9 @@ table {
   #sidebar {
     @extend %slide;
 
-    transform: translateX(-#{$sidebar-width-medium}); // hide
-    -webkit-transform: translateX(-#{$sidebar-width-medium});
+    /* CT: Removed "-" before SHARP_SIGNs */
+    transform: translateX(#{$sidebar-width-medium}); // hide
+    -webkit-transform: translateX(#{$sidebar-width-medium});
 
     .cursor {
       -webkit-transition: none;
@@ -1056,7 +1066,8 @@ table {
   }
 
   #topbar-wrapper {
-    left: 0;
+    /* CT */
+    right: 0;
   }
 
   .topbar-up {
@@ -1075,11 +1086,12 @@ table {
   }
 
   #search-wrapper {
+    /* CT */
     &.loaded~a {
-      margin-right: 1rem;
+      margin-left: 1rem;
     }
     .fa-times-circle {
-      right: 5.2rem;
+      left: 5.2rem;
     }
   }
 
@@ -1133,7 +1145,8 @@ table {
   }
 
   #main-wrapper {
-    margin-left: $sidebar-width-medium;
+    /* CT */
+    margin-right: $sidebar-width-medium !important;
   }
 
   #profile-wrapper {
@@ -1148,7 +1161,7 @@ table {
   /* button 'back-to-Top' position */
   #back-to-top {
     bottom: 5.5rem;
-    right: 1.2rem;
+    left: 1.2rem;
   }
 
   .topbar-up {
@@ -1156,7 +1169,8 @@ table {
   }
 
   #topbar-title {
-    text-align: left;
+    /* CT */
+    text-align: right;
   }
 
   footer>div.d-flex {
@@ -1189,7 +1203,8 @@ table {
   }
 
   #topbar-wrapper {
-    left: 210px;
+    /* CT */
+    right: 210px;
   }
 
   #search-result-wrapper {
@@ -1211,7 +1226,8 @@ table {
   }
 
   #main-wrapper {
-    margin-left: 210px;
+    /* CT */
+    margin-right: 210px !important;
   }
 
   #breadcrumb {
@@ -1251,7 +1267,9 @@ table {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
     max-width: 75%;
-    padding-left: 3%;
+    
+    /* CT */
+    padding-right: 3%;
   }
 
   #topbar {
@@ -1265,7 +1283,7 @@ table {
 
   #back-to-top {
     bottom: 6.5rem;
-    right: 4.3rem;
+    left: 4.3rem;
   }
 
   #search-input {
@@ -1304,7 +1322,8 @@ table {
 @media all and (min-width: 1400px) {
 
   #main>div.row {
-    padding-left: calc((100% - #{$main-content-max-width}) / 2);
+    /* CT */
+    padding-right: calc((100% - #{$main-content-max-width}) / 2) !important;
     >div.col-xl-8 {
       max-width: 850px;
     }
@@ -1318,41 +1337,48 @@ table {
   }
 
   #search-wrapper .fa-times-circle {
-    right: 2.6rem;
+    /* CT */
+    left: 2.6rem;
   }
 
 }
 
 @media all and (min-width: 1400px) and (max-width: 1650px) {
   #topbar {
-    padding-right: 2rem;
+    /* CT */
+    padding-left: 2rem;
   }
 }
 
 @media all and (min-width: 1650px) {
 
   #breadcrumb {
-    padding-left: 0;
+    /* CT */
+    padding-right: 0;
   }
 
   #main>div.row>div.col-xl-8 {
-    padding-left: 0;
+    /* CT */
+    padding-right: 0;
     >div:first-child {
-      padding-left: .55rem !important;
-      padding-right: 1.9rem !important;
+      padding-right: .55rem !important;
+      padding-left: 1.9rem !important;
     }
   }
 
   #main-wrapper {
-    margin-left: $sidebar-width-large;
+    /* CT */
+    margin-right: $sidebar-width-large !important;
   }
 
   #panel-wrapper {
-    margin-left: calc((100% - #{$main-content-max-width}) / 10);
+    /* CT */
+    margin-right: calc((100% - #{$main-content-max-width}) / 10);
   }
 
   #topbar-wrapper {
-    left: $sidebar-width-large;
+    /* CT */
+    right: $sidebar-width-large;
   }
 
   #topbar {
@@ -1360,7 +1386,8 @@ table {
   }
 
   #search-wrapper {
-    margin-right: 3%;
+    /* CT */
+    margin-left: 3%;
   }
 
   #profile-wrapper {
@@ -1414,8 +1441,10 @@ table {
   #sidebar {
     width: $sidebar-width-large;
     ul {
-      margin-left: 5%;
+      /* CT: Commenting this line out without changing it to margin-right because that causes some problems on RTL website */
+      /* margin-left: 5%; */
       >li>a {
+        /* CT */
         padding-right: 2.5rem;
         -webkit-box-pack: start!important;
         -ms-flex-pack: start!important;
@@ -1431,7 +1460,9 @@ table {
         @include icon-round(1.65rem);
         line-height: 1rem;
         font-size: .6rem;
-        padding: .5em 0 0 .1em;
+
+        /* CT */
+        padding: .5em .1em 0 0;
         display: inline-block!important;
       }
     }
@@ -1490,7 +1521,8 @@ table {
 
 @media all and (min-width: 1700px) {
   #topbar-wrapper {
-    padding-right: calc(100% - #{$sidebar-width-large}
+    /* CT */
+    padding-left: calc(100% - #{$sidebar-width-large}
      - (1920px - #{$sidebar-width-large}) ) /* 100% - 350px - (1920px - 350px); */
   }
 
@@ -1499,27 +1531,31 @@ table {
   }
 
   #main>div.row {
-    padding-left: calc((100% - #{$main-content-max-width} - 2%) / 2);
+    /* CT */
+    padding-right: calc((100% - #{$main-content-max-width} - 2%) / 2) !important;
   }
 
   #panel-wrapper {
-    margin-left: 3%;
+    /* CT */
+    margin-right: 3%;
   }
 
   footer {
-    padding-left: 0;
-    padding-right: calc(100% - #{$sidebar-width-large} - 1180px);
+    /* CT */
+    padding-right: 0;
+    padding-left: calc(100% - #{$sidebar-width-large} - 1180px);
   }
 
   #back-to-top {
-    right: calc(100% - 1920px + 15rem);
+    left: calc(100% - 1920px + 15rem);
   }
 
 }
 
 @media (min-width: 1920px) {
   #main>div.row {
-    padding-left: 190px;
+    /* CT */
+    padding-right: 190px !important;
   }
 
   #search-result-wrapper {
@@ -1527,7 +1563,8 @@ table {
   }
 
   #panel-wrapper {
-    margin-left: 41px;
+    /* CT */
+    margin-right: 41px;
   }
 }
 
@@ -1643,7 +1680,158 @@ ol.persian {
 
 /* RTL Codes */
 #sidebar {
-	right: 0;
+	/* left: initial !important;
+	right: 0; */
 	direction: rtl;
 	* { direction: initial }
+
+	.nav {
+		/*padding-right: 0;*/
+		
+		.nav-item {
+			direction: rtl;
+
+			/* &::after {
+				right: initial;
+				left: 1px;
+			} */
+		}
+	}
+}
+
+#main-wrapper {
+	/* margin-left: initial;
+	margin-right: 260px; */
+}
+
+#main {
+	.row {
+		/* padding-right: calc((100% - #{$main-content-max-width}) / 2); */
+		padding-left: 0 !important;
+		justify-content: flex-end;
+
+		> div:nth-child(2) {
+			/* padding-right: 3% !important;
+			padding-left: 15px !important; */
+		}
+	}
+}
+
+#panel-wrapper {
+	padding-right: .5rem !important;
+	padding-left: 15px !important;
+	
+	.access {
+		margin-left: 1.5rem;
+		margin-right: 0;
+	}
+
+	#access-tags {
+		padding-right: 1rem;
+		padding-left: 0;
+		border-right: 1px solid var(--main-border-color);
+		border-left: 0;
+
+		direction: rtl;
+		text-align: right;
+
+		.d-flex {
+			margin-left: 1rem !important;
+			margin-right: 0 !important;
+
+			.post-tag {
+				margin-left: .35rem;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+#topbar-wrapper {
+	/* right: 260px;
+	left: 0; */
+
+	
+
+	#topbar {
+		/* padding-right: 0;
+		padding-left: 2rem; */
+		
+		direction: rtl;
+	}
+}
+
+#page {
+	text-align: right;
+	direction: rtl;
+}
+
+#breadcrumb {
+	/* padding-right: .5rem;
+	padding-left: 0; */
+	text-align: right;
+	display: flex;
+	justify-content: flex-start;
+}
+
+#post-list {
+	padding-left: .5rem;
+	padding-right: 0 !important;
+}
+
+.pagination {
+	padding-right: .5rem;
+	padding-left: 0;
+	direction: ltr;
+	justify-content: flex-end;
+}
+
+#toc-wrapper {
+	text-align: right;
+	direction: rtl;
+	padding-left: 1.5rem !important;
+	padding-right: 0 !important;
+
+	h3 {
+		font-family: 'Lato', 'Vazir', 'Microsoft Yahei', sans-serif !important;
+		padding-right: 1rem;
+		padding-left: 0 !important;
+	}
+
+	ul {
+		padding-right: 0 !important;
+	}
+}
+
+/* bootstrap-toc RTL */
+nav[data-toggle="toc"] .nav > li > a:focus, nav[data-toggle="toc"] .nav > li > a:hover {
+    padding-right: 19px;
+    color: #563d7c;
+    text-decoration: none;
+    background-color: transparent;
+    border-right: 1px solid #563d7c;
+}
+
+nav[data-toggle="toc"] .nav-link.active, nav[data-toggle="toc"] .nav-link.active:focus, nav[data-toggle="toc"] .nav-link.active:hover {
+    padding-right: 18px;
+    font-weight: 700;
+    color: #563d7c;
+    background-color: transparent;
+    border-right: 2px solid #563d7c;
+}
+
+nav[data-toggle="toc"] .nav > li > a { border-left: none !important; padding-left: 0; }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { line-height: 1.4 }
+
+.post-tail-wrapper {
+	direction: rtl;
+	text-align: right;
+
+	.post-tags, .post-meta {
+		i {
+			margin-left: .25rem;
+			margin-right: 0 !important;
+		}
+	}
 }
