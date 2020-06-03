@@ -343,7 +343,8 @@ $sidebar-display: "sidebar-display";
 
 #search-cancel { /* 'Cancel' link */
   color: var(--link-color);
-  margin-left: 1rem;
+  /* CT */
+  margin-right: 1rem;
   display: none;
 }
 
@@ -370,6 +371,8 @@ $sidebar-display: "sidebar-display";
 
 #search-hints {
   display: none;
+  direction: rtl;
+  text-align: right;
   .post-tag {
     display: inline-block;
     line-height: 1rem;
@@ -377,12 +380,13 @@ $sidebar-display: "sidebar-display";
     background: var(--search-tag-bg);
     border: none;
     padding: .5rem;
-    margin: 0 1rem 1rem 0;
+    /* CT */
+    margin: 0 0 1rem 1rem;
     &::before {
       content: "#";
       color: var(--text-muted-color);
       
-      padding-right: .2rem;
+      padding-left: .2rem;
     }
   }
 }
@@ -406,7 +410,8 @@ $sidebar-display: "sidebar-display";
     }
     i { // icons
       color: #818182;
-      margin-right: .15rem;
+      /* CT */
+      margin-left: .15rem;
       font-size: 80%;
     }
     >p {
@@ -1019,9 +1024,7 @@ table {
 
     #topbar-wrapper,
     #main-wrapper {
-      /* CT */
-      /* Removed "-" SHARP_SIGN */
-      transform: translateX(#{$sidebar-width-medium});
+      transform: translateX(-#{$sidebar-width-medium});
     }
 
   }
@@ -1060,7 +1063,7 @@ table {
     }
   }
 
-  #breadcrumb,
+  #breadcrumb { display: none !important; }
   #search-wrapper {
     display: none;
   }
@@ -1298,14 +1301,16 @@ table {
   #search-results>div {
     max-width: 46%;
     &:nth-child(odd) {
-      margin-right: 1.5rem;
+      /* CT */
+      margin-left: 1.5rem;
     }
     &:nth-child(even) {
-      margin-left: 1.5rem;
+      /* CT */
+      margin-right: 1.5rem;
     }
     &:last-child:nth-child(odd) {
       position: relative;
-      right: 24.3%;
+      left: 24.3%;
     }
   }
 
@@ -1330,7 +1335,8 @@ table {
   }
 
   #search-result-wrapper {
-    padding-right: 2rem;
+    /* CT */
+    padding-left: 2rem;
     >div {
       max-width: 1110px;
     }
@@ -1559,7 +1565,8 @@ table {
   }
 
   #search-result-wrapper {
-    padding-right: calc(100% - #{$sidebar-width-large} - 1530px);
+    /* CT */
+    padding-left: calc(100% - #{$sidebar-width-large} - 1530px);
   }
 
   #panel-wrapper {
@@ -1690,6 +1697,7 @@ ol.persian {
 		
 		.nav-item {
 			direction: rtl;
+			
 
 			/* &::after {
 				right: initial;
@@ -1862,4 +1870,15 @@ nav[data-toggle="toc"] .nav > li > a { border-left: none !important; padding-lef
 #post-wrapper .post .post-meta {
 	justify-content: flex-start;
 	flex-direction: row-reverse !important;
+}
+
+#search-results {
+	direction: rtl;
+	text-align: right;
+}
+
+#page-tag {
+	ul {
+		padding-right: 0;
+	}
 }

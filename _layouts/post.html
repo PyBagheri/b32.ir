@@ -19,27 +19,9 @@ layout: default
 
       <div class="post-meta text-muted d-flex flex-column">
         <!-- Published date and author -->
-	{% if page.lang != 'fa' %}
-        <div>
-          Posted
-          <span class="timeago" data-toggle="tooltip" data-placement="bottom"
-           title="{{ page.date | date: site.data.date_format.tooltip }}">
-            {{ page.date | date: site.data.date_format.post }}
-            <i class="unloaded">{{ page.date | date_to_xmlschema }}</i>
-          </span>
-          by
-          <a href="/tabs/about" class="author">
-          {% if page.author %}
-            {{ page.author }}
-          {% else%}
-            {{ site.author }}
-          {% endif %}
-          </a>
-        </div>
-	{% else %}
         <div style="direction: rtl; text-align: right;">
           نوشته شده در
-          <span class="timeago farsi" data-toggle="tooltip" data-placement="bottom"
+          <span class="timeago farsi jalali jalali-tooltip" data-toggle="tooltip" data-placement="bottom"
            title="{{ page.date | date: site.data.date_format.tooltip }}">
             {{ page.date | date: site.data.date_format.post }}
             <i class="unloaded">{{ page.date | date_to_xmlschema }}</i>
@@ -53,7 +35,6 @@ layout: default
           {% endif %}
           </a>
         </div>
-	{% endif %}
 
         <!-- lastmod -->
         {%- capture filename -%}

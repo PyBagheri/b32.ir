@@ -51,8 +51,8 @@
       {% assign post = site.posts[index] %}
       <div class="card">
         <a href="{{ post.url | relative_url }}">
-          <div class="card-body{% if post.lang == 'fa' %} rtl align-right{% endif %}">
-            <span class="timeago{% if post.lang == 'fa' %} farsi rtl align-right{% endif %} small">
+          <div class="card-body rtl align-right">
+            <span class="timeago farsi rtl align-right small">
                 {{ post.date | date: site.data.date_format.post }}
                 <i class="unloaded">{{ post.date | date_to_xmlschema }}</i>
             </span>
