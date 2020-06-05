@@ -12,8 +12,8 @@
 %date-timeline {
   content: "";
   width: 4px;
-  /* CT */
-  right: 75px;
+  /* CT: was left & 75px */
+  right: 111px;
   display: inline-block;
   /* CT */
   float: right;
@@ -26,6 +26,28 @@
 }
 
 #archives {
+      a::before {
+        /* A dot for Month and Day */
+        content: "";
+        display: inline-block;
+        position: relative;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        
+        /* CT */
+        float: right;
+        top: 1.35rem;
+
+        /* CT: was left & 69px */
+        right: 105px;
+        background-color: var(--timeline-node-bg);
+        box-shadow: 0 0 3px 0 #c2c6cc;
+        z-index: 1;
+      }
+
   letter-spacing: 0.03rem;
   li {
     font-size: 1.1rem;
@@ -46,13 +68,13 @@
     font-size: 1.5rem;
     @extend %date-font;
     position: relative;
-    /* CT */
-    right: 8px;
+    /* CT: was left & 8px */
+    right: 44px;
 
     &:not(:first-child) {
       position: relative;
-      /* CT */
-      right: 4px;
+      /* CT: was left & 4px */
+      right: 40px;
       &::after {
         /* CT */
         right: 67px;
@@ -84,30 +106,11 @@
     white-space: nowrap;
     display: inline-block;
     &.month {
-      width: 1.4rem;
-      text-align: center;
+      /* CT: Commented out */
+      /* width: 1.4rem; */
+      /* CT: was center */
+      text-align: left;
       @extend %date-font;
-      ~a::before {
-        /* A dot for Month and Day */
-        content: "";
-        display: inline-block;
-        position: relative;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-        width: 8px;
-        height: 8px;
-        
-        /* CT */
-        float: right;
-        top: 1.35rem;
-
-        /* CT */
-        right: 69px;
-        background-color: var(--timeline-node-bg);
-        box-shadow: 0 0 3px 0 #c2c6cc;
-        z-index: 1;
-      }
     }
     &.day {
       font-size: 85%;
@@ -125,7 +128,8 @@
 
   ul {
     >li {
-      >div>a {
+      >div { /* CT: ADDED */ }
+      >div a {
         /* post title in Archvies */
         /* CT */
         margin-right: 2.5rem;

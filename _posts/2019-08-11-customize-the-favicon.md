@@ -2,6 +2,16 @@
 title: Customize the Favicon
 author: Cotes Chung
 date: 2019-08-11 00:34:00 +0800
+jdate:
+  year:
+    fa: ۱۳۹۸
+    en: 1398
+  month:
+    number: 5
+    name: مرداد
+  day: 20
+  weekdayname: یکشنبه
+  time: 00:34:00 +0800
 categories: [Blogging, Tutorial]
 tags: [favicon, کلمخواری]
 toc: false

@@ -53,7 +53,7 @@
     {% if show %}
         <!-- show number -->
         <li class="page-item {% if i == paginator.page %} active{% endif %}">
-          <a class="page-link btn-box-shadow" href="{{ site.baseurl }}/{% if i > 1%}page{{ i }}/{% endif %}">{{ i }}</a>
+          <a class="page-link btn-box-shadow" href="{{ site.baseurl }}/{% if i > 1%}page{{ i }}/{% endif %}">{{ i | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }}</a>
         </li>
       {% else %}
         <!-- hide number -->

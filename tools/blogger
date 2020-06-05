@@ -42,6 +42,16 @@ def getJalaliMonthName(month_number):
             'اسفند'][month_number - 1]
 
 
+def getIranianWeekdayName(iso_weekday_number):
+    return ['دوشنبه',
+            'سه‌شنبه',
+            'چهارشنبه',
+            'پنجشنبه',
+            'جمعه',
+            'شنبه',
+            'یکشنبه'][iso_weekday_number - 1]
+
+
 class BColors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -72,7 +82,7 @@ def update_post(filename, title='', filename_update=False):
                 post_file_datetime = datetime.datetime.strptime(re.findall(
                     "\ndate: (.*?)??\n", post_content)[0], '%Y-%m-%d %H:%M:%S %z')
 
-                if input(BColors.BOLD + 'Do you want to refresh the date TO NOW? (Y/n) ' + BColors.ENDC).strip().lower() != 'y':
+                if input(BColors.BOLD + 'Do you want to refresh the date TO NOW? (Yes/No) ' + BColors.ENDC).strip().lower() != 'yes':
                     post_datetime = post_file_datetime
             except (ValueError, IndexError):
                 if input(BColors.BOLD + BColors.WARNING + 'The post does not have a VALID datetime, do you want to use the current datetime? (Y/n) ' + BColors.ENDC).strip().lower() != 'y':
@@ -89,24 +99,26 @@ def update_post(filename, title='', filename_update=False):
             title = re.findall("title: (.*?)??\n", post_content)[0]
 
         to_replace = {"(date: )(.*?)??\n": post_datetime.strftime('%Y-%m-%d %H:%M:%S %z'),
-                      "(    - fa: )(.*?)??\n": enToFaNumbers(jalali_datetime.jyear),
-                      "(    - en: )(.*?)??\n": str(jalali_datetime.jyear),
-                      "(    - number: )(.*?)??\n": str(jalali_datetime.jmonth),
-                      "(    - name: )(.*?)??\n": getJalaliMonthName(jalali_datetime.jmonth),
+                      "(    fa: )(.*?)??\n": enToFaNumbers(jalali_datetime.jyear),
+                      "(    en: )(.*?)??\n": str(jalali_datetime.jyear),
+                      "(    number: )(.*?)??\n": str(jalali_datetime.jmonth),
+                      "(    name: )(.*?)??\n": getJalaliMonthName(jalali_datetime.jmonth),
                       "(  day: )(.*?)??\n": str(jalali_datetime.jday),
+                      "(  weekdayname: )(.*?)??\n": getIranianWeekdayName(post_datetime.isoweekday()),
                       "(  time: )(.*?)??\n": post_datetime.strftime('%H:%M:%S %z')}
 
         # Check if jdate fields exist
-        if not re.findall("jdate: (.*?)??\n", post_content):
+        if not re.findall("\njdate:.*?\n", post_content):
             post_content = re.sub("date: (.*?)??\n", 'date: ' + r'\g<1>' +
                                   "\njdate:\n" +
                                   "  year:\n" +
-                                  "    - fa: {jdate_year_fa}\n" +
-                                  "    - en: {jdate_year_en}\n" +
+                                  "    fa: {jdate_year_fa}\n" +
+                                  "    en: {jdate_year_en}\n" +
                                   "  month:\n" +
-                                  "    - number: {jdate_month_number}\n" +
-                                  "    - name: {jdate_month_name}\n" +
+                                  "    number: {jdate_month_number}\n" +
+                                  "    name: {jdate_month_name}\n" +
                                   "  day: {jdate_day}\n" +
+                                  "  weekdayname: {jdate_weekdayname}\n" +
                                   "  time: {jdate_time}\n", post_content, 1)
 
         for regex, value in to_replace.items():
@@ -252,12 +264,13 @@ if sys.argv[1].lower() == 'new':
                   "date: {gdate}",
                   "jdate:",
                   "  year:",
-                  "    - fa: {jdate_year_fa}",
-                  "    - en: {jdate_year_en}",
+                  "    fa: {jdate_year_fa}",
+                  "    en: {jdate_year_en}",
                   "  month:",
-                  "    - number: {jdate_month_number}",
-                  "    - name: {jdate_month_name}",
+                  "    number: {jdate_month_number}",
+                  "    name: {jdate_month_name}",
                   "  day: {jdate_day}",
+                  "  weekdayname: {jdate_weekdayname}",
                   "  time: {jdate_time}",
                   "categories: [{0}]".format(
                       main_cat + (', {0}'.format(sub_cat) if sub_cat else '')),

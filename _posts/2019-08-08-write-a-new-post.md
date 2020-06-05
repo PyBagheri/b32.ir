@@ -2,6 +2,16 @@
 title: Writing a New Post
 author: Cotes Chung
 date: 2019-08-08 14:10:00 +0800
+jdate:
+  year:
+    fa: ۱۳۹۸
+    en: 1398
+  month:
+    number: 5
+    name: مرداد
+  day: 17
+  weekdayname: پنجشنبه
+  time: 14:10:00 +0800
 categories: [Blogging, Tutorial]
 tags: [writing]
 ---
