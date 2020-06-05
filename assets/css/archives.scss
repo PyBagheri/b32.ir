@@ -12,9 +12,11 @@
 %date-timeline {
   content: "";
   width: 4px;
-  left: 75px;
+  /* CT */
+  right: 75px;
   display: inline-block;
-  float: left;
+  /* CT */
+  float: right;
   position: relative;
   background-color: var(--timeline-color);
 }
@@ -44,13 +46,16 @@
     font-size: 1.5rem;
     @extend %date-font;
     position: relative;
-    left: 8px;
+    /* CT */
+    right: 8px;
 
     &:not(:first-child) {
       position: relative;
-      left: 4px;
+      /* CT */
+      right: 4px;
       &::after {
-        left: 67px;
+        /* CT */
+        right: 67px;
       }
     }
 
@@ -65,7 +70,8 @@
       width: 12px;
       height: 12px;
       top: -26px;
-      left: 63px;
+      /* CT */
+      right: 63px;
       border: 3px solid;
       background-color: var(--timeline-year-dot-color);
       border-color: var(--timeline-node-bg);
@@ -91,9 +97,13 @@
         border-radius: 50%;
         width: 8px;
         height: 8px;
-        float: left;
+        
+        /* CT */
+        float: right;
         top: 1.35rem;
-        left: 69px;
+
+        /* CT */
+        right: 69px;
         background-color: var(--timeline-node-bg);
         box-shadow: 0 0 3px 0 #c2c6cc;
         z-index: 1;
@@ -103,10 +113,13 @@
       font-size: 85%;
       font-family: 'Lato', sans-serif;
       text-align: center;
-      margin-right: -2px;
+
+      /* CT */
+      margin-left: -2px;
       width: 1.2rem;
       position: relative;
-      left: -.15rem;
+      /* CT */
+      right: -.15rem;
     }
   } // #archives .date
 
@@ -114,7 +127,8 @@
     >li {
       >div>a {
         /* post title in Archvies */
-        margin-left: 2.5rem;
+        /* CT */
+        margin-right: 2.5rem;
         position: relative;
         top: .1rem;
       }

@@ -67,16 +67,15 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/home.css">
 
   {% elsif page.layout == 'page' %}
-
-    {% if page.title == 'Categories' %}
+    {% if page.label == 'Categories' %}
       <link rel="preload" href="{{ site.baseurl }}/assets/css/categories.css" as="style">
       <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/categories.css">
 
-    {% elsif page.title == 'Tags' %}
+    {% elsif page.label == 'Tags' %}
       <link rel="preload" href="{{ site.baseurl }}/assets/css/tags.css" as="style">
       <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tags.css">
 
-    {% elsif page.title == 'Archives' %}
+    {% elsif page.label == 'Archives' %}
       <link rel="preload" href="{{ site.baseurl }}/assets/css/archives.css" as="style">
       <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/archives.css">
 

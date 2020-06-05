@@ -1,5 +1,6 @@
 ---
-title: Archives
+title: آرشیو
+label: Archives
 
 # The Archives of posts.
 # v2.0

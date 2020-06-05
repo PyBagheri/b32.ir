@@ -9,14 +9,14 @@ layout: page
 
 <div id="post-list">
   {% for post in paginator.posts %}
-  <div class="post-preview{% if post.lang == 'fa' %} rtl align-right{% endif %}">
+  <div class="post-preview rtl align-right">
     {% if post.image %}
     <a href="{{ site.baseurl }}{{ post.url }}"><img class="post-image" src="{{ post.image }}"></a>
     {% endif %}
     <h1>
-      <a href="{{ site.baseurl }}{{ post.url }}"{% if post.lang == 'fa' %} class="rtl align-right"{% endif %}>{{ post.title }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="rtl align-right">{{ post.title }}</a>
     </h1>
-    <div class="post-content{% if post.lang == 'fa' %} rtl align-right{% endif %}">
+    <div class="post-content rtl align-right">
       <p>
       {% assign _content = post.content %}
       {% include no-linenos.html %}
@@ -27,7 +27,7 @@ layout: page
     <div class="post-meta text-muted">
       <!-- posted date -->
       <i class="far fa-clock fa-fw"></i>
-      <span class="timeago{% if post.lang == 'fa' %} farsi rtl align-right{% endif %}" data-toggle="tooltip" data-placement="bottom"
+      <span class="timeago farsi rtl align-right jalali jalali-tooltip" data-toggle="tooltip" data-placement="bottom"
         title="{{ post.date | date: site.data.date_format.tooltip }}">
       {{ post.date | date: site.data.date_format.post }}
       <i class="unloaded">{{ post.date | date_to_xmlschema }}</i>

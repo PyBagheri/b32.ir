@@ -1,5 +1,6 @@
 ---
-title: Categories
+title: موضوعات
+label: Categories
 
 # All the Categories of posts
 # v2.0
@@ -43,11 +44,11 @@ title: Categories
         {% assign top_posts_size = site.categories[category_name] | size %}
         <span class="text-muted small font-weight-light">
         {% if sub_categories_size > 0 %}
-          {{ sub_categories_size }}
-          {% if sub_categories_size > 1 %}categories{% else %}category{% endif %},
+          {{ sub_categories_size | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }}
+          موضوع،
         {% endif %}
-          {{ top_posts_size }}
-          post{% if top_posts_size > 1 %}s{% endif %}
+          {{ top_posts_size | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }}
+          مطلب
         </span>
       </span>
 
@@ -72,8 +73,8 @@ title: Categories
           <a href="{{ site.baseurl }}/categories/{{ sub_category | replace: ' ', '-' | downcase | url_encode }}/"
             class="ml-1 mr-2">{{ sub_category }}</a>
           {% assign posts_size = site.categories[sub_category] | size %}
-          <span class="text-muted small font-weight-light">{{ posts_size }}
-            post{% if posts_size > 1 %}s{% endif %}
+          <span class="text-muted small font-weight-light">{{ posts_size | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }}
+            مطلب
           </span>
         </li>
         {% endfor %}

@@ -16,12 +16,14 @@
 .categories {
   margin-bottom: 2rem;
   .card-header {
-    padding-right: 12px;
+    /* CT */
+    padding-left: 12px;
   }
   .list-group-item {
     border-left: none;
     border-right: none;
-    padding-left: 2rem;
+    /* CT */
+    padding-right: 2rem;
     >i {
       @extend %category-icon-color;
     }

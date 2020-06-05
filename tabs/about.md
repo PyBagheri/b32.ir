@@ -1,5 +1,6 @@
 ---
-title: About me
+title: دربارهٔ من
+label: About
 
 # The About page
 # v2.0

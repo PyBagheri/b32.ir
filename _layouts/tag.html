@@ -11,7 +11,7 @@ layout: page
   <h1 class="pl-lg-2">
     <i class="fa fa-tag fa-fw text-muted"></i>
     {{ page.title }}
-    <span class="lead text-muted pl-2">{{ site.tags[page.tag] | size }}</span>
+    <span class="lead text-muted pl-2">{{ site.tags[page.tag] | size | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }}</span>
   </h1>
   <ul class="post-content pl-0">
     {% for post in site.tags[page.tag] %}
