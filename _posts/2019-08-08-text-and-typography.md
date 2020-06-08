@@ -15,6 +15,7 @@ jdate:
   time: 11:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
+hashid: 5bde879fb09452f883c7dc562d07f1c6
 ---
 
 This Jekyll template totally compatible with Markdown syntax. Now, let's take a look for the text and typography in this theme.

@@ -14,6 +14,7 @@ jdate:
   time: 14:10:00 +0800
 categories: [Blogging, Tutorial]
 tags: [writing]
+hashid: 5695e34bc12bc05a3b2fa67f1b897bae
 ---
 
 ## Naming and Path

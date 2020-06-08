@@ -16,6 +16,7 @@ jdate:
   time: 20:55:00 +0800
 categories: [Blogging, Tutorial]
 tags: [getting started]
+hashid: 183e9854af3442de8a9139692a541db2
 ---
 
 ## Prerequisites
