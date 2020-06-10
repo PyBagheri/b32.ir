@@ -76,7 +76,7 @@ class BColors:
 # Constant variables
 base_dir = os.path.abspath(os.path.join(
     os.path.dirname(os.path.realpath(__file__)), os.pardir))
-website_url = 'https://b32.ir/fa/'
+website_url = 'https://b32.ir/'
 
 
 def rreplace(s, old, new, occurrence):
@@ -157,6 +157,9 @@ def update_post(filename, title='', filename_update=False):
     print(BColors.BOLD + BColors.OKBLUE + 'The post updated successfully!\n\nYour post:\nTitle: {0}\nFilename: {1}\nDate & Time: {2}'.format(
         title, filename, post_datetime.strftime('%Y-%m-%d %H:%M:%S %z')) + BColors.ENDC)
 
+# Check if a command has given.
+if len(sys.argv) < 2:
+    print(BColors.FAIL + 'Invalid command!' +  BColors.ENDC)
 
 if sys.argv[1].lower() == 'new':
     # Title & Filename'.blogger.data'
