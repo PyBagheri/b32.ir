@@ -30,13 +30,14 @@ twitter:
   username: PyBagheri            # change to your twitter username
 
 telegram:
-  username: Mubkh
+  username: b32ir
 
 social:
   name: محمدحسین باقری خیرآبادی                  # it will shows as the copyright owner in Footer
   email: py.persian@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    - https://t.me/b32ir
     - https://twitter.com/PyBagheri      # change to your twitter homepage
     - https://github.com/PyBagheri     # change to your github homepage
     # Uncomment below to add more social links
@@ -211,6 +212,9 @@ sitemap_exclude:  # Sitemap will exclude the following items.
     - redirects.json
     - staticman.yml
     - notes.txt
+    - sw.js
+    - app.js
 
-staticman_url: https://dev.staticman.net/v3/entry/github/PyBagheri/b32.ir.persian/master/comments/
+staticman_url: https://dev.staticman.net/v3/entry/github/PyBagheri/b32.ir/master/comments/
 encoding: "utf-8"
+

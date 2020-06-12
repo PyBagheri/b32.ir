@@ -9,15 +9,13 @@ label: About
 # MIT License
 ---
 
-نسخه فارسی را [اینجا](google.com) بخوانید.
-{: .rtl.align-right }
+**[My English weblog](https://en.b32.ir)**
+{: .ltr.align-left}
 
-Hello,
+سلام،
 
-My full name is **MohammadHossein Bagheri KheirAbadi**, Yeah, It's long enough to confuse you, but it's not just a simple name, it indicates where my lineage returns to, which country I've born in and what religion I believe in. 
+من محمدحسین باقری هستم، البته با پسوند "خیرآبادی" که به محله‌ای معروف در شهر اردبیل اشاره دارد، شهری که در سال ۱۳۸۳ در آن متولد شدم. از همان دوران کودکی، عاشق دستگاه‌ و چرخ‌دنده و هر چیز مکانیکی و الکترونیکی بودم و همین‌ها باعث شدند تا فکرهایی در ذهنم به‌وجود بیاید؛ فکرهایی که به مرور گسترش یافتند و به من انگیزه دادند. اینجا را ساختم تا بخشی از این فکرها را به دیگران هم منتقل کنم و خوشحالی کارهایم را به اشتراک بگذارم.
 
-I've born in 2004, in a city called **Ardabil**, located in Iran. Most of people in the world love their birthplace, as well as I do, so, If I'm going to tell you about myself, first, I should tell you about a love, about a strong unbreakable connection that is beyond the bounds of descriptiveness, about my city. So, I decided that my first post would be about **Ardabil, my city**.
+مباحث مورد علاقهٔ من، شامل رایانه‌ها، تحصیلات و سیستم‌های آموزشی (نه آنطور که شاید فکر می‌کنید!)، طبیعت و محیط زیست، سفر کردن و دیدن دنیا، زبان‌ها و فرهنگ‌های مردم جهان و چند مبحث دیگر است که دوست دارم اینجا دربارهٔ آن‌ها بنویسم.
 
-My favorite topics are the computers, education (NOT as you would think), nature and the environment, traveling around the world, and the languages, and some other ones. So I started this blog to write about them.
-
-That's enough, having right cognition of someone could only be realized by knowing his thoughts, So I prefer to introduce myself in my posts rather than a simple "About page". I'm looking forward to your comments below my posts 😉😇.
+من فکر می‌کنم که داشتن شناخت صحیح از افراد با دانستن افکار آن‌ها ممکن می‌شود؛ پس ترجیح می‌دهم که بجای یک صفحهٔ سادهٔ «دربارهٔ من»، خودم را با مطالب و نوشته‌هایم معرفی کنم. اگر شما هم می‌خواهید نظرتان را بیان کنید یا چیزی بگویید، می‌توانید از راه‌های ارتباطی موجود در قسمت پایین منوی وبلاگ استفاده کنید. منتظر نظرات شما در زیر مطالب وبلاگم هستم 😉.

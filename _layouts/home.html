@@ -27,8 +27,8 @@ layout: page
     <div class="post-meta text-muted">
       <!-- posted date -->
       <i class="far fa-clock fa-fw"></i>
-      <span class="timeago farsi rtl align-right jalali jalali-tooltip" data-toggle="tooltip" data-placement="bottom"
-        title="{{ post.date | date: site.data.date_format.tooltip }}">
+      <span class="timeago farsi rtl align-right" data-toggle="tooltip" data-placement="bottom"
+        title="{{ post.jdate.weekdayname }}، {{ post.jdate.day | replace: "0","۰" | replace: "1","۱" | replace: "2","۲" | replace: "3","۳" | replace: "4","۴" | replace: "5","۵" | replace: "6","۶" | replace: "7","۷" | replace: "8","۸" | replace: "9","۹" }} {{ post.jdate.month.name }} {{ post.jdate.year.fa }}">
       {{ post.date | date: site.data.date_format.post }}
       <i class="unloaded">{{ post.date | date_to_xmlschema }}</i>
       </span>
